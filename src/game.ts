@@ -7,6 +7,8 @@ import skyImage from "./images/sky3.png";
 import heroImage from "./images/superhero.png";
 import gameOverImage from "./images/gameoverimage.png";
 import endScreen from "./images/endscreen.png"
+import buttonUp from "./images/buttonup.png"
+import buttonDown from "./images/buttondown.png"
 
 //LETTERS
 import letterAImage from "./images/letterA.png"
@@ -48,6 +50,10 @@ import { LetterH } from "./letterH";
 //BACKGROUND
 import { Background } from "./background";
 
+//BUTTONS
+import { Up } from "./buttonup"
+import { Down } from "./buttondown"
+
 //GAME CLASS
 export class Game {
 
@@ -76,6 +82,8 @@ export class Game {
   public damageSound: HTMLAudioElement
   public collectSound: HTMLAudioElement
   public endSound: HTMLAudioElement
+  public up: Up;
+  public down: Down;
 
   public ASound: HTMLAudioElement
   public BSound: HTMLAudioElement
@@ -117,6 +125,8 @@ export class Game {
       .add("letterHTexture", letterHImage)
       .add("gameOverImageTexture", gameOverImage)
       .add("endScreenTexture", endScreen)
+      .add("buttonUpTexture", buttonUp)
+      .add("buttonDownTexture", buttonDown)
       .add("damageSound", damageSound)
       .add("collectSound", collectSound)
       .add("endSound", endSound)
@@ -256,6 +266,14 @@ export class Game {
     this.bar.drawRect(800, 25, 200, 50);
     this.bar.endFill();
     this.pixi.stage.addChild(this.bar);
+
+    // //BUTTON UP
+    // this.up = new Up(this.loader.resources["buttonUpTexture"].texture!, this)
+    // this.pixi.stage.addChild(this.up)
+
+    // //BUTTON DOWN
+    // this.down = new Down(this.loader.resources["buttonDownTexture"].texture!, this)
+    // this.pixi.stage.addChild(this.down)
 
     //ANIMATION 
     this.pixi.ticker.add((delta: number) => this.update(delta));
@@ -557,6 +575,7 @@ export class Game {
 
     this.pixi.stage.addChild(this.endButton)
   }
+
 
   //SCORE = 0 
   //GAME OVER

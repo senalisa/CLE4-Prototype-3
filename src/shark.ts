@@ -25,9 +25,17 @@ export class Hero extends PIXI.Sprite {
     this.y = 400
     this.scale.set(1, 1);
 
+    //GAME CONTROLS
     //KEYDOWN AND UP EVENT LISTENER
     window.addEventListener("keydown", (e: KeyboardEvent) => this.onKeyDown(e));
     window.addEventListener("keyup", (e: KeyboardEvent) => this.onKeyUp(e));
+
+    //MOUSE CURSOR TRACKER
+    // window.addEventListener("mousemove", (e: MouseEvent) => this.mouseMoveHandler(e));
+
+    //TOUCH
+    window.addEventListener("touchstart", (e: TouchEvent) => this.touchHandler(e));
+    window.addEventListener("touchmove", (e: TouchEvent) => this.touchHandler(e));
 
     //HITBOX
     this.hitbox = new PIXI.Rectangle(0, 40, 40, 40)
@@ -46,7 +54,7 @@ export class Hero extends PIXI.Sprite {
     this.bgSound.volume = 0.85
   }
 
-  //KEYBOARD
+  // KEYBOARD
   onKeyDown(e: KeyboardEvent): any {
     if (e.key === "ArrowUp") {
       this.speed = -5;
@@ -60,6 +68,24 @@ export class Hero extends PIXI.Sprite {
       this.speed = 0;
       //play background sound
       this.bgSound.play()
+    }
+  }
+
+  //MOUSE CURSOR
+  // mouseMoveHandler(e: MouseEvent) {
+  //   var relativeY = e.clientY - this.game.pixi.screen.top
+
+  //   if (relativeY > 0 && relativeY < this.game.pixi.screen.height) {
+  //     this.y = relativeY - this.height / 2
+  //     this.bgSound.play()
+  //   }
+  // }
+
+  //TOUCH
+  touchHandler(e: TouchEvent) {
+    if (e.touches) {
+      this.y = e.touches[0].pageY - this.game.pixi.screen.top - this.height / 2;
+      e.preventDefault
     }
   }
 
