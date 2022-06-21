@@ -36,6 +36,7 @@ import HSound from "./sound/H.mp3";
 //MC
 import { Enemy } from "./fish";
 import { Hero } from "./shark";
+import { Hero2, HeroTwo } from "./sharktwo";
 
 //LETTERS from TS files
 import { LetterA } from "./letterA";
@@ -62,6 +63,7 @@ export class Game {
   public fishes: Enemy[] = [];
   public loader: PIXI.Loader;
   public shark: Hero;
+  public sharkTwo: HeroTwo;
 
   public letterA: LetterA;
   public letterB: LetterB;
@@ -199,6 +201,10 @@ export class Game {
     this.shark = new Hero(this.loader.resources["playerTexture"].texture!, this);
     this.pixi.stage.addChild(this.shark);
 
+    //PLAYER HERO
+    this.sharkTwo = new HeroTwo(this.loader.resources["playerTexture"].texture!, this);
+    this.pixi.stage.addChild(this.sharkTwo);
+
     //LETTER A
     this.letterA = new LetterA(this.loader.resources["letterATexture"].texture!, this);
     this.pixi.stage.addChild(this.letterA);
@@ -285,6 +291,7 @@ export class Game {
     //UPDATE ANIMATIONS
     this.background.update();
     this.shark.update();
+    this.sharkTwo.update();
     this.letterA.update(delta);
     this.letterB.update(delta);
     this.letterC.update(delta);

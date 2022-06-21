@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"./styles.css","loc":{"line":3,"column":8}},{"name":"./game","loc":{"line":4,"column":21}}],"generated":{"js":"\"use strict\";\nObject.defineProperty(exports, \"__esModule\", { value: true });\nrequire(\"./styles.css\");\nvar game_1 = require(\"./game\");\nnew game_1.Game();\n//# sourceMappingURL=index.js.map"},"hash":"bc329e49b4600ee8c233ca9f1961e483"}

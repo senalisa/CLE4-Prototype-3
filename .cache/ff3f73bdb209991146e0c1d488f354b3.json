@@ -1,0 +1,1 @@
+{"dependencies":[{"name":"./src/index.ts","dynamic":true}],"generated":{"html":"<html>\n  <head>\n    <title></title>\n    <meta charset=\"UTF-8\">\n  </head>\n\n  <body>\n    <div id=\"app\"></div>\n\n    <script defer=\"\" type=\"module\" src=\"/dist/cbc0392c6efcf302a7839f3084850ad6.js\"></script>\n  </body>\n</html>\n"},"hash":"95166e8098e635920e79e28a01323eb3"}

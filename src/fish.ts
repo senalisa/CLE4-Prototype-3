@@ -18,7 +18,7 @@ export class Enemy extends PIXI.Sprite {
 
     this.speed = 3;
     this.x = Math.random() * window.innerWidth;
-    this.y = Math.random() * window.innerHeight - 50;
+    this.y = Math.random() * window.innerHeight + 50;
 
     this.anchor.set(0.5);
     this.scale.set(1, 1);
