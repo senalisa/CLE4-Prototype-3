@@ -58,16 +58,17 @@ export class HeroTwo extends PIXI.Sprite {
 
     // KEYBOARD
     onKeyDown(e: KeyboardEvent): any {
+        console.log(e.key);
 
-        if (e.key === "KeyW") {
+        if (e.key === "w") {
             this.speed = -5;
         }
-        if (e.key === "KeyS") {
+        if (e.key === "s") {
             this.speed = 5;
         }
     }
     onKeyUp(e: KeyboardEvent): any {
-        if (e.key === "KeyW" || e.key === "KeyS") {
+        if (e.key === "w" || e.key === "s") {
             this.speed = 0;
             //play background sound
             this.bgSound.play()

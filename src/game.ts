@@ -201,9 +201,9 @@ export class Game {
     this.shark = new Hero(this.loader.resources["playerTexture"].texture!, this);
     this.pixi.stage.addChild(this.shark);
 
-    //PLAYER HERO
-    this.sharkTwo = new HeroTwo(this.loader.resources["playerTexture"].texture!, this);
-    this.pixi.stage.addChild(this.sharkTwo);
+    //PLAYER HERO TWO
+    // this.sharkTwo = new HeroTwo(this.loader.resources["playerTexture"].texture!, this);
+    // this.pixi.stage.addChild(this.sharkTwo);
 
     //LETTER A
     this.letterA = new LetterA(this.loader.resources["letterATexture"].texture!, this);
@@ -291,7 +291,7 @@ export class Game {
     //UPDATE ANIMATIONS
     this.background.update();
     this.shark.update();
-    this.sharkTwo.update();
+    // this.sharkTwo.update();
     this.letterA.update(delta);
     this.letterB.update(delta);
     this.letterC.update(delta);
@@ -303,6 +303,7 @@ export class Game {
 
     //ENEMY/PLAYER COLLISION DETECTION
     for (const fish of this.fishes) {
+      //COLLISION HERO1
       fish.update(delta);
       if (this.collision(this.shark, fish)) {
         //Add score
@@ -320,6 +321,24 @@ export class Game {
         }, 1000);
 
       }
+
+      //COLLISION HERO2 -MULTIPLAYER-
+      // if (this.collision(this.sharkTwo, fish)) {
+      //   //Add score
+      //   this.score -= 1;
+      //   this.scoreBoard.text = `${this.score}`;
+
+      //   //play Sound
+      //   this.damageSound.play();
+
+      //   //Tint
+      //   fish.tint = 0x630000;
+
+      //   setTimeout(function () {
+      //     fish.tint = 0xD7D4D2;
+      //   }, 1000);
+
+      // }
     }
 
     //COLLISION WITH LETTER A
@@ -343,6 +362,27 @@ export class Game {
 
     }
 
+    //HERO TWO LETTER A COLLISON
+    // if (this.collision(this.sharkTwo, this.letterA)) {
+
+    //   this.letterA.width = 57;
+    //   this.letterA.height = 57;
+    //   this.letterA.position.set(60, 32.5);
+    //   this.letterA.speed = 0
+    //   this.pixi.stage.removeChild(this.letterA);
+
+    //   let letterAShow = new LetterA(this.loader.resources["letterATexture"].texture!, this);
+    //   letterAShow.width = 57;
+    //   letterAShow.height = 57;
+    //   letterAShow.position.set(60, 22.5);
+    //   this.pixi.stage.addChild(letterAShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.ASound.play();
+
+    // }
+
     //COLLISION WITH LETTER B
     if (this.collision(this.shark, this.letterB)) {
 
@@ -363,6 +403,27 @@ export class Game {
       this.BSound.play();
 
     }
+
+    //HERO TWO COLLISION WITH LETTER B 
+    // if (this.collision(this.sharkTwo, this.letterB)) {
+
+    //   this.letterB.width = 57;
+    //   this.letterB.height = 57;
+    //   this.letterB.position.set(60, 32.5);
+    //   this.letterB.speed = 0
+    //   this.pixi.stage.removeChild(this.letterB);
+
+    //   let letterBShow = new LetterB(this.loader.resources["letterBTexture"].texture!, this);
+    //   letterBShow.width = 57;
+    //   letterBShow.height = 57;
+    //   letterBShow.position.set(120, 22.5);
+    //   this.pixi.stage.addChild(letterBShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.BSound.play();
+
+    // }
 
     //COLLISION WITH LETTER C
     if (this.collision(this.shark, this.letterC)) {
@@ -385,6 +446,27 @@ export class Game {
 
     }
 
+    //HERO TWO COLLISION WITH LETTER C
+    // if (this.collision(this.sharkTwo, this.letterC)) {
+
+    //   this.letterC.width = 57;
+    //   this.letterC.height = 57;
+    //   this.letterC.position.set(60, 32.5);
+    //   this.letterC.speed = 0
+    //   this.pixi.stage.removeChild(this.letterC);
+
+    //   let letterCShow = new LetterC(this.loader.resources["letterCTexture"].texture!, this);
+    //   letterCShow.width = 57;
+    //   letterCShow.height = 57;
+    //   letterCShow.position.set(180, 22.5);
+    //   this.pixi.stage.addChild(letterCShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.CSound.play();
+
+    // }
+
     //COLLISION WITH LETTER D
     if (this.collision(this.shark, this.letterD)) {
 
@@ -405,6 +487,27 @@ export class Game {
       this.DSound.play();
 
     }
+
+    //HERO TWO COLLISION WITH LETTER D
+    // if (this.collision(this.sharkTwo, this.letterD)) {
+
+    //   this.letterD.width = 57;
+    //   this.letterD.height = 57;
+    //   this.letterD.position.set(60, 32.5);
+    //   this.letterD.speed = 0
+    //   this.pixi.stage.removeChild(this.letterD);
+
+    //   let letterDShow = new LetterD(this.loader.resources["letterDTexture"].texture!, this);
+    //   letterDShow.width = 57;
+    //   letterDShow.height = 57;
+    //   letterDShow.position.set(240, 22.5);
+    //   this.pixi.stage.addChild(letterDShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.DSound.play();
+
+    // }
 
     //COLLISION WITH LETTER E
     if (this.collision(this.shark, this.letterE)) {
@@ -427,6 +530,27 @@ export class Game {
 
     }
 
+    //HERO TWO COLLISION WITH LETTER E
+    // if (this.collision(this.sharkTwo, this.letterE)) {
+
+    //   this.letterE.width = 57;
+    //   this.letterE.height = 57;
+    //   this.letterE.position.set(60, 32.5);
+    //   this.letterE.speed = 0
+    //   this.pixi.stage.removeChild(this.letterE);
+
+    //   let letterEShow = new LetterE(this.loader.resources["letterETexture"].texture!, this);
+    //   letterEShow.width = 57;
+    //   letterEShow.height = 57;
+    //   letterEShow.position.set(300, 22.5);
+    //   this.pixi.stage.addChild(letterEShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.ESound.play();
+
+    // }
+
     //COLLISION WITH LETTER F
     if (this.collision(this.shark, this.letterF)) {
 
@@ -448,6 +572,28 @@ export class Game {
 
     }
 
+    //HERO TWO COLLISION WITH LETTER F
+    // if (this.collision(this.sharkTwo, this.letterF)) {
+
+    //   this.letterF.width = 57;
+    //   this.letterF.height = 57;
+    //   this.letterF.position.set(60, 32.5);
+    //   this.letterF.speed = 0
+    //   this.pixi.stage.removeChild(this.letterF);
+
+    //   let letterFShow = new LetterF(this.loader.resources["letterFTexture"].texture!, this);
+    //   letterFShow.width = 57;
+    //   letterFShow.height = 57;
+    //   letterFShow.position.set(360, 22.5);
+    //   this.pixi.stage.addChild(letterFShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.FSound.play();
+
+    // }
+
+
     //COLLISION WITH LETTER G
     if (this.collision(this.shark, this.letterG)) {
 
@@ -468,6 +614,27 @@ export class Game {
       this.GSound.play();
 
     }
+
+    //HERO TWO COLLISION WITH LETTER G
+    // if (this.collision(this.sharkTwo, this.letterG)) {
+
+    //   this.letterG.width = 57;
+    //   this.letterG.height = 57;
+    //   this.letterG.position.set(60, 32.5);
+    //   this.letterG.speed = 0
+    //   this.pixi.stage.removeChild(this.letterG);
+
+    //   let letterGShow = new LetterG(this.loader.resources["letterGTexture"].texture!, this);
+    //   letterGShow.width = 57;
+    //   letterGShow.height = 57;
+    //   letterGShow.position.set(420, 22.5);
+    //   this.pixi.stage.addChild(letterGShow);
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.GSound.play();
+
+    // }
 
     //COLLISION WITH LETTER H
     if (this.collision(this.shark, this.letterH)) {
@@ -492,6 +659,30 @@ export class Game {
       this.HSound.play();
 
     }
+
+    //HERO TWO COLLISION WITH LETTER H
+    // if (this.collision(this.sharkTwo, this.letterH)) {
+
+    //   this.letterH.width = 57;
+    //   this.letterH.height = 57;
+    //   this.letterH.position.set(60, 32.5);
+    //   this.letterH.speed = 0
+    //   this.pixi.stage.removeChild(this.letterH);
+
+    //   let letterHShow = new LetterH(this.loader.resources["letterHTexture"].texture!, this);
+    //   letterHShow.width = 57;
+    //   letterHShow.height = 57;
+    //   letterHShow.position.set(480, 22.5);
+    //   this.pixi.stage.addChild(letterHShow);
+
+    //   //FUNCTION ALL LETTERS PICKED
+    //   this.lettersPicked();
+
+    //   //PLAY SOUND
+    //   this.collectSound.play();
+    //   this.HSound.play();
+
+    // }
 
     //IF SCORE + HEALTHBAR
     //90

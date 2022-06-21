@@ -56,6 +56,8 @@ export class Hero extends PIXI.Sprite {
 
   // KEYBOARD
   onKeyDown(e: KeyboardEvent): any {
+    // console.log(e.key);
+
     if (e.key === "ArrowUp") {
       this.speed = -5;
     }
