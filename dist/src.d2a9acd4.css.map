@@ -1,1 +1,0 @@
-{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,KACE,wBAAiC,CACjC,QAAS,CACT,SAAU,CACV,eAAgB,CAChB,YAAa,CACb,UACF","file":"src.d2a9acd4.css","sourceRoot":"..","sourcesContent":["body {\n  background-color: rgb(27, 25, 45);\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  height: 100vh;\n  width: auto;\n}\n"]}

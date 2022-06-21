@@ -21,22 +21,22 @@ import letterGImage from "./images/letterG.png"
 import letterHImage from "./images/letterH.png"
 
 //SOUND
-import damageSound from "./sound/hitHurt.wav";
-import collectSound from "./sound/pickupCoin.wav";
-import endSound from "./sound/goedzo.mp3";
-import ASound from "./sound/A.mp3";
-import BSound from "./sound/B.mp3";
-import CSound from "./sound/C.mp3";
-import DSound from "./sound/D.mp3";
-import ESound from "./sound/E.mp3";
-import FSound from "./sound/F.mp3";
-import GSound from "./sound/G.mp3";
-import HSound from "./sound/H.mp3";
+import damageSound from "url:./sound/hitHurt.wav";
+import collectSound from "url:./sound/pickupCoin.wav";
+import endSound from "url:./sound/goedzo.mp3";
+import ASound from "url:./sound/A.mp3";
+import BSound from "url:./sound/B.mp3";
+import CSound from "url:./sound/C.mp3";
+import DSound from "url:./sound/D.mp3";
+import ESound from "url:./sound/E.mp3";
+import FSound from "url:./sound/F.mp3";
+import GSound from "url:./sound/G.mp3";
+import HSound from "url:./sound/H.mp3";
 
 //MC
 import { Enemy } from "./fish";
 import { Hero } from "./shark";
-import { Hero2, HeroTwo } from "./sharktwo";
+import { HeroTwo } from "./sharktwo";
 
 //LETTERS from TS files
 import { LetterA } from "./letterA";

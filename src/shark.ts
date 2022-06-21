@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import { Game } from "./game";
 
 //Import SOUND
-import bgSound from "./sound/dino.mp3";
+import bgSound from "url:./sound/dino.mp3";
 
 export class Hero extends PIXI.Sprite {
 
